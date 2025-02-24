@@ -33,6 +33,11 @@ namespace Mission08_Team0408.Controllers
 
         public IActionResult Quadrants()
         {
+          return View();
+        }
+        
+        public IActionResult TaskForm()
+        {
             return View();
         }
     }
