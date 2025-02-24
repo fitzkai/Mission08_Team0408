@@ -17,14 +17,9 @@ namespace Mission08_Team0408.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var tasks = _taskContext.Tasks.ToList();
+            return View(tasks);
         }
-        
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        
 
         public IActionResult Quadrants()
         {
