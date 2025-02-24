@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Mvc;
 using Mission08_Team0408.Models;
 
@@ -27,6 +28,11 @@ namespace Mission08_Team0408.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Quadrants()
+        {
+            return View();
         }
     }
 }
