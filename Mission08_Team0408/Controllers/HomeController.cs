@@ -20,6 +20,7 @@ namespace Mission08_Team0408.Controllers
             var tasks = _taskContext.Tasks.ToList();
             return View(tasks);
         }
+
         public IActionResult Quadrants()
         {
           return View();
