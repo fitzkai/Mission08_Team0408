@@ -18,5 +18,10 @@ namespace Mission08_Team0408.Controllers
         {
             return View();
         }
+        
+        public IActionResult TaskForm()
+        {
+            return View();
+        }
     }
 }
