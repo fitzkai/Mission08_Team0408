@@ -11,7 +11,7 @@ using Mission08_Team0408.Models;
 namespace Mission08_Team0408.Migrations
 {
     [DbContext(typeof(TaskDbContext))]
-    [Migration("20250224220628_Initial")]
+    [Migration("20250226193225_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Mission08_Team0408.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.13");
 
-            modelBuilder.Entity("Mission08_Team0408.Models.Task", b =>
+            modelBuilder.Entity("Mission08_Team0408.Models.Redo", b =>
                 {
                     b.Property<int>("TaskId")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace Mission08_Team0408.Migrations
 
                     b.HasKey("TaskId");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("Redos");
                 });
 #pragma warning restore 612, 618
         }
