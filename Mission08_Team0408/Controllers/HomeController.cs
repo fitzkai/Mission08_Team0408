@@ -25,10 +25,44 @@ namespace Mission08_Team0408.Controllers
         {
           return View();
         }
-        
+        [HttpGet]
         public IActionResult TaskForm()
         {
-            return View();
+            
+            return View("TaskForm", new Task());
+        }
+
+        [HttpPost]
+        public IActionResult TaskForm(Task response)
+        {
+            if (ModelState.IsValid)
+            {
+                _taskContext.Tasks.Add(response);
+                _taskContext.SaveChanges();
+                
+                return View("Quadrants", response);
+            }
+            else // Invalid Data
+            {
+                return View(response);
+            }
+        }
+        
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var recordToEdit = _taskContext.Tasks
+                .Single(x => x.TaskId == id);
+            
+            return View("TaskForm", recordToEdit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Task updatedRecord)
+        {
+            _taskContext.Update(updatedRecord);
+            _taskContext.SaveChanges();
+            return RedirectToAction("Quadrants");
         }
     }
 }
