@@ -25,10 +25,35 @@ namespace Mission08_Team0408.Controllers
         {
           return View();
         }
-        
+        [HttpGet]
         public IActionResult TaskForm()
         {
-            return View();
+            return View("TaskForm", new Redo());
+        }
+
+        [HttpPost]
+        public IActionResult TaskForm(Redo response)
+        {
+            if (ModelState.IsValid)
+            {
+                _taskContext.Redos.Add(response);
+                _taskContext.SaveChanges();
+                
+                return View("Quadrants", response);
+            }
+            else //invalid data
+            {
+                return View(response);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Redo updatedTask)
+        {
+            _taskContext.Update(updatedTask);
+            _taskContext.SaveChanges();
+
+            return RedirectToAction("Quadrants");
         }
     }
 }
