@@ -19,95 +19,127 @@
             padding-bottom: 10px;
         }
 
-        /* Rotates "Important" and "Not Important" */
         .side-label {
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            writing-mode: vertical-rl; /* Rotates text */
-            text-orientation: mixed; /* Keeps letters readable */
-            height: 100%; /* Fills the row */
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            height: 100%;
+        }
+
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .task-buttons {
+            display: flex;
+            gap: 5px;
         }
     </style>
 </head>
 <body>
 
     <div class="container mt-4">
-        <!-- Top Labels -->
         <div class="row label-row">
             <div class="col-md-6"><h2>Urgent</h2></div>
             <div class="col-md-6"><h2>Not Urgent</h2></div>
         </div>
 
         <div class="row">
-            <!-- Left Label (Sideways "Important") -->
             <div class="col-md-1 side-label"><h2>Important</h2></div>
 
-            <!-- Top Left Quadrant -->
             <div class="col-md-5 quadrant bg-light">
                 <h4>Quadrant 1</h4>
-                <ul>
+                <button class="btn btn-primary btn-sm mb-2">Add</button>
+                <ul class="list-group">
                     @foreach (var record in Model)
                     {
                         if (record.Quadrant == 1)
                         {
-                            <li>@record.Name</li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @record.Name
+                                <div class="task-buttons">
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                </div>
+                            </li>
                         }
                     }
                 </ul>
             </div>
 
-            <!-- Top Right Quadrant -->
             <div class="col-md-5 quadrant bg-secondary text-white">
                 <h4>Quadrant 2</h4>
-                <ul>
+                <button class="btn btn-primary btn-sm mb-2">Add</button>
+                <ul class="list-group">
                     @foreach (var record in Model)
                     {
                         if (record.Quadrant == 2)
                         {
-                            <li>@record.Name</li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @record.Name
+                                <div class="task-buttons">
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                </div>
+                            </li>
                         }
                     }
                 </ul>
             </div>
 
-            <div class="col-md-1"></div> <!-- Empty Space -->
+            <div class="col-md-1"></div>
         </div>
 
         <div class="row mt-2">
-            <!-- Left Label (Sideways "Not Important") -->
             <div class="col-md-1 side-label"><h2>Not Important</h2></div>
 
-            <!-- Bottom Left Quadrant -->
             <div class="col-md-5 quadrant bg-info text-white">
                 <h4>Quadrant 3</h4>
-                <ul>
+                <button class="btn btn-primary btn-sm mb-2">Add</button>
+                <ul class="list-group">
                     @foreach (var record in Model)
                     {
                         if (record.Quadrant == 3)
                         {
-                            <li>@record.Name</li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @record.Name
+                                <div class="task-buttons">
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                </div>
+                            </li>
                         }
                     }
                 </ul>
             </div>
 
-            <!-- Bottom Right Quadrant -->
             <div class="col-md-5 quadrant bg-warning">
                 <h4>Quadrant 4</h4>
-                <ul>
+                <button class="btn btn-primary btn-sm mb-2">Add</button>
+                <ul class="list-group">
                     @foreach (var record in Model)
                     {
                         if (record.Quadrant == 4)
                         {
-                            <li>@record.Name</li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                @record.Name
+                                <div class="task-buttons">
+                                    <button class="btn btn-warning btn-sm">Edit</button>
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                </div>
+                            </li>
                         }
                     }
                 </ul>
             </div>
 
-            <div class="col-md-1"></div> <!-- Empty Space -->
+            <div class="col-md-1"></div>
         </div>
     </div>
 
