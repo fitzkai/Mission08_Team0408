@@ -2,10 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Do you need help putting first things first? Using Stephen Covey's Time Management Matrix can help!</p>
-</div>
-<div class="text-center">
-    <img src="wwwroot/img/timemanagement.png"></img>
+<div class="container mt-5">
+    <div class="text-center p-4 border rounded shadow bg-light">
+        <h1 class="display-4 fw-bold">Welcome</h1>
+        <p class="lead">Do you need help putting first things first?</p>
+        <p class="text-muted">
+            Using <strong>Stephen Covey's Time Management Matrix</strong> can help you prioritize tasks effectively!
+        </p>
+        <img src="~/img/timemanagement.png" class="img-fluid rounded shadow" alt="Time Management Matrix">
+    </div>
+    <div class="text-center mt-4">
+        <a href="/TaskForm" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
 </div>
