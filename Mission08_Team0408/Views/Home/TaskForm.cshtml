@@ -3,7 +3,7 @@
 <h1>Create a New Task</h1>
 
 <form method="post">
-    <input type="hidden" asp-for="TaskId"></input>
+    <input type="hidden" asp-for="TaskId">
     <br/>
     <label asp-for="TaskName">Task Name:</label>
     <input asp-for="TaskName"/>
@@ -31,4 +31,6 @@
         <option value="True">True</option>
         <option value="False">False</option>
     </select>
+
+    <button type="submit">Save Task</button>
 </form>
