@@ -1,0 +1,41 @@
+Index: Mission08_Team0408/Controllers/HomeController.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Diagnostics;\nusing System.Reflection.Metadata.Ecma335;\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.EntityFrameworkCore;\nusing Mission08_Team0408.Models;\n\nnamespace Mission08_Team0408.Controllers\n{\n    public class HomeController : Controller\n    {\n        private TaskDbContext _taskContext;\n\n        public HomeController(TaskDbContext context)\n        {\n            _taskContext = context;\n        }\n\n        public IActionResult Index()\n        {\n            var tasks = _taskContext.Tasks.ToList();\n            return View(tasks);\n        }\n\n        public IActionResult Quadrants()\n        {\n          return View();\n        }\n        [HttpGet]\n        public IActionResult TaskForm()\n        {\n            \n            return View(\"TaskForm\", new Task());\n        }\n\n        [HttpPost]\n        public IActionResult TaskForm(Task response)\n        {\n            if (ModelState.IsValid)\n            {\n                _taskContext.Tasks.Add(response);\n                _taskContext.SaveChanges();\n                \n                return View(\"Quadrants\", response);\n            }\n            else // Invalid Data\n            {\n                return View(response);\n            }\n        }\n        \n        [HttpGet]\n        public IActionResult Edit(int id)\n        {\n            var recordToEdit = _taskContext.Tasks\n                .Single(x => x.TaskId == id);\n            \n            return View(\"TaskForm\", recordToEdit);\n        }\n\n        [HttpPost]\n        public IActionResult Edit(Task updatedRecord)\n        {\n            _taskContext.Update(updatedRecord);\n            _taskContext.SaveChanges();\n            return RedirectToAction(\"Quadrants\");\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Mission08_Team0408/Controllers/HomeController.cs b/Mission08_Team0408/Controllers/HomeController.cs
+--- a/Mission08_Team0408/Controllers/HomeController.cs	(revision 7eb2e0810b72c6269cff927a9da36e9f904a540e)
++++ b/Mission08_Team0408/Controllers/HomeController.cs	(date 1740538466747)
+@@ -3,6 +3,7 @@
+ using Microsoft.AspNetCore.Mvc;
+ using Microsoft.EntityFrameworkCore;
+ using Mission08_Team0408.Models;
++using MyTask = Mission08_Team0408.Models.Task;
+ 
+ namespace Mission08_Team0408.Controllers
+ {
+@@ -29,11 +30,11 @@
+         public IActionResult TaskForm()
+         {
+             
+-            return View("TaskForm", new Task());
++            return View("TaskForm", new MyTask());
+         }
+ 
+         [HttpPost]
+-        public IActionResult TaskForm(Task response)
++        public IActionResult TaskForm(MyTask response)
+         {
+             if (ModelState.IsValid)
+             {
+@@ -58,7 +59,7 @@
+         }
+ 
+         [HttpPost]
+-        public IActionResult Edit(Task updatedRecord)
++        public IActionResult Edit(MyTask updatedRecord)
+         {
+             _taskContext.Update(updatedRecord);
+             _taskContext.SaveChanges();
