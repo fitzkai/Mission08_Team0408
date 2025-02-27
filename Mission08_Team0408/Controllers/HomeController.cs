@@ -28,6 +28,10 @@ namespace Mission08_Team0408.Controllers
         [HttpGet]
         public IActionResult TaskForm()
         {
+            ViewBag.Categories = _taskContext.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+            
             return View("TaskForm", new ToDo());
         }
 
@@ -43,10 +47,25 @@ namespace Mission08_Team0408.Controllers
             }
             else //invalid data
             {
+                ViewBag.Categories = _taskContext.Categories
+                    .OrderBy(x => x.CategoryName)
+                    .ToList();
                 return View(response);
             }
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var taskToEdit = _taskContext.ToDos
+                .Single(x =>x.TaskId == id);
+            
+            ViewBag.Categories = _taskContext.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+            return View("Quadrants", taskToEdit);
+        }
+        
         [HttpPost]
         public IActionResult Edit(ToDo updatedTask)
         {
