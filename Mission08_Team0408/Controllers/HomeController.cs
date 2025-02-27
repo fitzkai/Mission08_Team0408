@@ -17,7 +17,7 @@ namespace Mission08_Team0408.Controllers
 
         public IActionResult Index()
         {
-            var tasks = _taskContext.Redos.ToList();
+            var tasks = _taskContext.ToDos.ToList();
             return View(tasks);
         }
 
@@ -28,15 +28,15 @@ namespace Mission08_Team0408.Controllers
         [HttpGet]
         public IActionResult TaskForm()
         {
-            return View("TaskForm", new Redo());
+            return View("TaskForm", new ToDo());
         }
 
         [HttpPost]
-        public IActionResult TaskForm(Redo response)
+        public IActionResult TaskForm(ToDo response)
         {
             if (ModelState.IsValid)
             {
-                _taskContext.Redos.Add(response);
+                _taskContext.ToDos.Add(response);
                 _taskContext.SaveChanges();
                 
                 return View("Quadrants", response);
@@ -48,7 +48,7 @@ namespace Mission08_Team0408.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Redo updatedTask)
+        public IActionResult Edit(ToDo updatedTask)
         {
             _taskContext.Update(updatedTask);
             _taskContext.SaveChanges();

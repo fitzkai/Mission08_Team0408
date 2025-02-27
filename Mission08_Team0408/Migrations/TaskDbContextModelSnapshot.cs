@@ -17,14 +17,29 @@ namespace Mission08_Team0408.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.13");
 
-            modelBuilder.Entity("Mission08_Team0408.Models.Redo", b =>
+            modelBuilder.Entity("Mission08_Team0408.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Mission08_Team0408.Models.ToDo", b =>
                 {
                     b.Property<int>("TaskId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category")
-                        .HasColumnType("TEXT");
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool?>("Completed")
                         .HasColumnType("INTEGER");
@@ -41,7 +56,18 @@ namespace Mission08_Team0408.Migrations
 
                     b.HasKey("TaskId");
 
-                    b.ToTable("Redos");
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ToDos");
+                });
+
+            modelBuilder.Entity("Mission08_Team0408.Models.ToDo", b =>
+                {
+                    b.HasOne("Mission08_Team0408.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId");
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }
