@@ -6,6 +6,6 @@ namespace Mission08_Team0408.Models
     {
         public TaskDbContext(DbContextOptions<TaskDbContext> options) : base(options) { }
 
-        public DbSet<Redo> Redos { get; set; }
+        public DbSet<ToDo> ToDos { get; set; }
     }
 }
