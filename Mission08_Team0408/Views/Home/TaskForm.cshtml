@@ -7,7 +7,7 @@
         <input type="hidden" asp-for="TaskId">
         <div class="mb-3">
             <label asp-for="TaskName" class="form-label">Task Name:</label>
-            <input asp-for="TaskName" class="form-control"/>
+            <input asp-for="TaskName" class="form-control" required/>
         </div>
         <div class="mb-3">
             <label asp-for="DueDate" class="form-label">Due Date:</label>
@@ -16,7 +16,7 @@
 
         <div class="mb-3">
             <label asp-for="Quadrant" class="form-label">Quadrant:</label>
-            <select asp-for="Quadrant" class="form-select">
+            <select asp-for="Quadrant" class="form-select" required>
                 <option value="1">Quadrant I: Important / Urgent</option>
                 <option value="2">Quadrant II: Important / Not Urgent</option>
                 <option value="3">Quadrant III: Not Important / Urgent</option>
