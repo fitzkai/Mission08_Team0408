@@ -1,6 +1,10 @@
-@{
-}
-
 @model ToDo
 
-<h2>@Model.TaskName added to the list. Thank you</h2>
+<div class="container mt-5">
+    <div class="alert alert-success text-center p-4 rounded shadow">
+        <h2 class="display-6">Task Added Successfully!</h2>
+        <p><strong>@Model.TaskName</strong> has been added to your to-do list.</p>
+        <a asp-action="TaskForm" class="btn btn-primary mt-3">Add Another Task</a>
+        <a asp-action="Index" class="btn btn-outline-secondary mt-3">Back to Home</a>
+    </div>
+</div>
