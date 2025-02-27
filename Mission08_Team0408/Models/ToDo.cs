@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission08_Team0408.Models
 {
-    public class Redo
+    public class ToDo
     {
         [Key]
         public int TaskId { get; set; }
@@ -14,7 +14,7 @@ namespace Mission08_Team0408.Models
         public int Quadrant { get; set; }
         [ForeignKey("CategoryId")]
         public int? CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
         public bool? Completed { get; set; }
     }
 }
