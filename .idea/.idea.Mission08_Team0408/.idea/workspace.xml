@@ -8,9 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf6afb64-4cb4-4d86-aeee-40a0480c3a7b" name="Changes" comment="">
+    <list default="true" id="bf6afb64-4cb4-4d86-aeee-40a0480c3a7b" name="Changes" comment="add submit confirmation">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mission08_Team0408/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mission08_Team0408/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mission08_Team0408/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team0408/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mission08_Team0408/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team0408/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mission08_Team0408/Views/Home/Submit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team0408/Views/Home/Submit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mission08_Team0408/Views/Home/TaskForm.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team0408/Views/Home/TaskForm.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mission08_Team0408/taskquadrants.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Mission08_Team0408/taskquadrants.sqlite" afterDir="false" />
     </list>
@@ -185,7 +186,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740600707932</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Category model to table">
+      <option name="closed" value="true" />
+      <created>1740693611353</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740693611353</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add submit confirmation">
+      <option name="closed" value="true" />
+      <created>1740693905134</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740693905134</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +219,8 @@
     <MESSAGE value="ADD EDIT" />
     <MESSAGE value="fix form and index page" />
     <MESSAGE value="add edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="add edit" />
+    <MESSAGE value="Add Category model to table" />
+    <MESSAGE value="add submit confirmation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add submit confirmation" />
   </component>
 </project>
