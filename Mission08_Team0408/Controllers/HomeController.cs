@@ -43,7 +43,7 @@ namespace Mission08_Team0408.Controllers
                 _taskContext.ToDos.Add(response);
                 _taskContext.SaveChanges();
                 
-                return View("Quadrants", response);
+                return View("Submit", response);
             }
             else //invalid data
             {
