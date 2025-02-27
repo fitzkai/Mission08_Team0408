@@ -21,11 +21,28 @@ namespace Mission08_Team0408.Controllers
             return View(tasks);
         }
 
-        public IActionResult Quadrants()
+        public IActionResult QuadrantView()
         {
-          return View();
+            var records = _taskContext.Redos.ToList(); // Fetch records from DB
+
+            // Ensure mapping from entity (Redo) to ViewModel (RedoViewModel)
+            var model = new RedoViewModel
+            {
+                Records = records.Select(r => new Redo
+                {
+                    TaskId = r.TaskId, 
+                    TaskName = r.TaskName,
+                    DueDate = r.DueDate,
+                    Quadrant = r.Quadrant,
+                    Category = r.Category,
+                    Completed = r.Completed
+                }).ToList() // Convert list of entities to list of ViewModel objects
+            };
+
+            return View(model);
         }
-        
+
+
         public IActionResult TaskForm()
         {
             return View();

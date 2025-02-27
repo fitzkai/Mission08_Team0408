@@ -14,4 +14,8 @@ namespace Mission08_Team0408.Models
         public string? Category { get; set; }
         public bool? Completed { get; set; }
     }
+    public class RedoViewModel
+    {
+        public List<Redo> Records { get; set; }
+    }
 }

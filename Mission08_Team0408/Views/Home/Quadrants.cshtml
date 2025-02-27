@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿using Mission08_Team0408.ViewModels;
+
+@model RedoViewModel
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -57,12 +60,12 @@
                 <h4>Quadrant 1</h4>
                 <button class="btn btn-primary btn-sm mb-2">Add</button>
                 <ul class="list-group">
-                    @foreach (var record in Model)
+                    @foreach (var record in Model.Records)
                     {
                         if (record.Quadrant == 1)
                         {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                @record.Name
+                                @record.TaskName
                                 <div class="task-buttons">
                                     <button class="btn btn-warning btn-sm">Edit</button>
                                     <button class="btn btn-danger btn-sm">Delete</button>
@@ -77,12 +80,12 @@
                 <h4>Quadrant 2</h4>
                 <button class="btn btn-primary btn-sm mb-2">Add</button>
                 <ul class="list-group">
-                    @foreach (var record in Model)
+                    @foreach (var record in Model.Records)
                     {
                         if (record.Quadrant == 2)
                         {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                @record.Name
+                                @record.TaskName
                                 <div class="task-buttons">
                                     <button class="btn btn-warning btn-sm">Edit</button>
                                     <button class="btn btn-danger btn-sm">Delete</button>
@@ -103,12 +106,12 @@
                 <h4>Quadrant 3</h4>
                 <button class="btn btn-primary btn-sm mb-2">Add</button>
                 <ul class="list-group">
-                    @foreach (var record in Model)
+                    @foreach (var record in Model.Records)
                     {
                         if (record.Quadrant == 3)
                         {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                @record.Name
+                                @record.TaskName
                                 <div class="task-buttons">
                                     <button class="btn btn-warning btn-sm">Edit</button>
                                     <button class="btn btn-danger btn-sm">Delete</button>
@@ -123,12 +126,12 @@
                 <h4>Quadrant 4</h4>
                 <button class="btn btn-primary btn-sm mb-2">Add</button>
                 <ul class="list-group">
-                    @foreach (var record in Model)
+                    @foreach (var record in Model.Records)
                     {
                         if (record.Quadrant == 4)
                         {
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                @record.Name
+                                @record.TaskName
                                 <div class="task-buttons">
                                     <button class="btn btn-warning btn-sm">Edit</button>
                                     <button class="btn btn-danger btn-sm">Delete</button>
