@@ -55,18 +55,28 @@
             color: grey;
             font-style: italic;
         }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <div class="container mt-4">
-        <div class="row label-row">
-            <div class="col-md-6"><h2>Urgent</h2></div>
-            <div class="col-md-6"><h2>Not Urgent</h2></div>
+        <div class="row text-center">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <h2>Urgent</h2></div>
+            <div class="col-md-5">
+                <h2>Not Urgent</h2></div>
         </div>
 
-        <div class="row">
-            <div class="col-md-1 side-label"><h2>Important</h2></div>
+        <div class="row mt-3">
+            <div class="col-md-1 d-flex align-items-center">
+                <h2 class="vertical-text">Important</h2>
+            </div>
 
             <div class="col-md-5 quadrant bg-light">
                 <h4>Quadrant 1</h4>
@@ -88,7 +98,7 @@
                 </ul>
             </div>
 
-            <div class="col-md-5 quadrant bg-secondary text-white">
+            <div class="col-md-5 quadrant bg-light">
                 <h4>Quadrant 2</h4>
                 <button class="btn btn-primary btn-sm mb-2">Add</button>
                 <ul class="list-group">
@@ -112,9 +122,11 @@
         </div>
 
         <div class="row mt-2">
-            <div class="col-md-1 side-label"><h2>Not Important</h2></div>
+            <div class="col-md-1 d-flex align-items-center">
+                <h2 class="vertical-text">Not Important</h2>
+            </div>
 
-            <div class="col-md-5 quadrant bg-info text-white">
+            <div class="col-md-5 quadrant bg-light">
                 <h4>Quadrant 3</h4>
                 <button class="btn btn-primary btn-sm mb-2">Add</button>
                 <ul class="list-group">
@@ -134,7 +146,7 @@
                 </ul>
             </div>
 
-            <div class="col-md-5 quadrant bg-warning">
+            <div class="col-md-5 quadrant bg-light">
                 <h4>Quadrant 4</h4>
                 <button class="btn btn-primary btn-sm mb-2">Add</button>
                 <ul class="list-group">
