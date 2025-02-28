@@ -1,0 +1,112 @@
+﻿@* @model List<ToDo> *@
+
+@* <!DOCTYPE html> *@
+@* <html lang="en"> *@
+@* <head> *@
+@*     <meta charset="UTF-8"> *@
+@*     <meta name="viewport" content="width=device-width, initial-scale=1.0"> *@
+@*     <title>Task Quadrants</title> *@
+@*     <style> *@
+@*         /* Basic styling to divide the page into 4 quadrants */ *@
+@*         .quadrant-container { *@
+@*             display: grid; *@
+@*             grid-template-columns: 1fr 1fr; *@
+@*             grid-template-rows: 1fr 1fr; *@
+@*             gap: 20px; *@
+@*             width: 100%; *@
+@*             height: 100vh; *@
+@*             padding: 20px; *@
+@*         } *@
+
+@*         .quadrant { *@
+@*             border: 1px solid #ccc; *@
+@*             padding: 20px; *@
+@*             box-sizing: border-box; *@
+@*             overflow-y: auto; *@
+@*             position: relative; *@
+@*         } *@
+
+@*         .quadrant-label { *@
+@*             position: absolute; *@
+@*             top: 0; *@
+@*             left: 0; *@
+@*             font-weight: bold; *@
+@*             background-color: rgba(255, 255, 255, 0.7); *@
+@*             padding: 5px; *@
+@*             font-size: 1.2rem; *@
+@*         } *@
+
+@*         h1 { *@
+@*             text-align: center; *@
+@*             margin-bottom: 30px; *@
+@*         } *@
+
+@*         ul { *@
+@*             list-style-type: none; *@
+@*             padding: 0; *@
+@*         } *@
+
+@*         li { *@
+@*             padding: 5px 0; *@
+@*         } *@
+
+@*         .no-tasks { *@
+@*             color: grey; *@
+@*             font-style: italic; *@
+@*         } *@
+@*     </style> *@
+@* </head> *@
+@* <body> *@
+@*     <h1>Task Quadrants</h1> *@
+
+@*     <div class="quadrant-container"> *@
+@*         @foreach (var quadrant in Model) *@
+@*         { *@
+@*             <div class="quadrant"> *@
+@*                 <!-- Display the quadrant label (top-left) --> *@
+@*                 <div class="quadrant-label">Quadrant @quadrant.Quadrant</div> *@
+@*                 <ul> *@
+@*                     @foreach (var task in Model) *@
+@*                     { *@
+                        
+@*                         <div class="col-md-5 quadrant bg-light"> *@
+@*                         <h4>Quadrant 1</h4> *@
+@*                         <button class="btn btn-primary btn-sm mb-2">Add</button> *@
+@*                         <ul class="list-group"> *@
+                    
+@*                         if (record.Quadrant == 1) *@
+@*                         { *@
+@*                             <li class="list-group-item d-flex justify-content-between align-items-center"> *@
+@*                                 @task.TaskName *@
+@*                                 <div class="task-buttons"> *@
+@*                                     <button class="btn btn-warning btn-sm">Edit</button> *@
+@*                                     <button class="btn btn-danger btn-sm">Delete</button> *@
+@*                                 </div> *@
+
+
+
+
+@*                         <li> *@
+@*                             <strong>@task.TaskName</strong><br /> *@
+@*                             Due: @task.DueDate <br /> *@
+@*                             Category: @task.Category?.CategoryName<br /> *@
+@*                             Completed: @(task.Completed == true ? "Yes" : "No") *@
+
+@*                             <div class="task-actions"> *@
+@*                                 <a asp-controller="Home" asp-action="Edit" asp-route-id="@task.TaskId">Edit</a> *@
+@*                                 <a asp-controller="Home" asp-action="Delete" class="delete" asp-route-id="@task.TaskId" *@
+@*                                    onclick="return confirm('Are you sure you want to delete this task?');">Delete</a> *@
+@*                             </div> *@
+@*                         </li> *@
+@*                     } *@
+
+@*                     @if (!Model.Any()) *@
+@*                     { *@
+@*                         <p class="no-tasks">No tasks in this quadrant</p> *@
+@*                     } *@
+@*                 </ul> *@
+@*             </div> *@
+@*         } *@
+@*     </div> *@
+@* </body> *@
+@* </html> *@
